@@ -1,0 +1,378 @@
+:root {
+    /*Text Colors*/
+
+    --textWhite: white;
+    --textBlack: black;
+
+    /*Logo Image*/
+
+    --logoImage: url("/images/logo.png");
+
+    /*Background Colors*/
+
+    --bgDark: black;
+    --bgLight: white;
+    --bgMedium: rgb(185, 183, 183); 
+
+    /*Business Theme Background Colors, can use these to place your company colors*/
+    --bgTheme1: rgb(166, 213, 243);
+    --bgTheme2: rgb(0, 99, 167);
+    --bgTheme3: rgb(3, 47, 98);
+
+    /* Background Custom Colors */
+    --bgCustom: rgb(101, 155, 196);
+
+    /*section Background Images Big Screens*/
+
+    --homeVideo: ;
+    --ourListingsBGImage: url("/images/ourListingImage.png");
+    --aboutBGImage: url("/images/modernPatio.png");
+    --searchBGImage: url("/images/searchImage.png");
+    --reviewsBGImages: url("/images/reviews.png");
+    --contactBGImages: url("/images/modernint3.png");
+
+    /*section background Images Small/Medium Screens*/
+
+    --homeVideo: ;
+    --ourListingsBGImageSM: url("/images/ourListingsImage.png");
+    --aboutBGImageSM: url("/images/modernPatioSm.png");
+    --searchBGImageSM: url("/images/searchMap.png");
+    --reviewsBGImagesSM: url("/images/reviews.png");
+    --contactBGImagesSM: url("/images/modernInt3small.png");
+
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px; /* Match your navbar height */
+}
+
+body {
+    overflow-x: hidden;
+    font-family: "Poppins", serif;
+    background-color: var(--textBlack);
+}
+
+.btn-outline-primary {
+    border: 2px solid var(--textWhite);
+}
+
+.fa-solid:hover {
+    color:
+     var(--bgCustom);
+}
+
+.btn {
+    background-color: var(--bgTheme3);
+    width: max-content;
+    margin: auto;
+    padding: 0 1rem !important;
+}
+
+.btn:hover {
+    background-color: var(--textWhite);
+    color: var(--textBlack) !important;
+    border: 2px solid var(--textBlack);
+}
+
+.text-custom {
+    color: var(--bgCustom) !important;
+    
+
+}
+.text-theme {
+    color: var(--bgTheme2) !important;
+    font-weight: 500;
+    text-shadow: 2px 2px 15px var(--textWhite);
+
+}
+
+.textShadowBlk {
+    text-shadow: 2px 2px 5px var(--textBlack);
+}
+
+.textShadowWht {
+    text-shadow: 2px 2px 10px var(--textWhite);
+}
+
+.textShadowTheme {
+    text-shadow: 2px 2px 10px var(--bgTheme3);
+}
+
+.bgLight {
+    background-color: var(--bgTheme1);
+}
+
+.bgBlue {
+    background-color: var(--bgCustom);
+}
+
+.text-custom {
+    color: rgb(40, 30, 46);
+}
+
+/* Home (Full Viewport Background) */
+
+#home {
+    background-image: url(images/modernInt4.png);
+    background-size: cover;
+    background-position: center; /* Center the background image */
+}
+
+/* Center Content within #home */
+#home > .d-flex {
+    min-height: 100vh; /* Ensure the centering container takes full height */
+}
+
+@media (max-width: 991px) {
+    .imgContainer {
+        padding: 3rem;
+    }
+
+    .my-img {
+        width: 175px !important;
+        height: 175px !important;
+    }
+}
+
+@media (max-width: 560px) {
+    #home {
+        background-image: url(images/mobileBG.png);
+        background-size: cover;
+        }
+}
+
+/* Custom Navbar Styles */
+
+.navbar-nav .nav-item.active .nav-link {
+    color: var(--bgCustom) !important; /* Highlight color */
+    font-weight: bold;
+}
+.navbar-nav .nav-item .nav-link {
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+
+.navbar {
+    transition: background-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hamburger Animation */
+.navbar-toggler {
+    border: none !important;
+    padding: 0.75rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    transition: transform 0.3s ease;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6L24 24M24 6L6 24'/%3e%3c/svg%3e");
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 991px) {
+    #navbarNav {
+        position: fixed;
+        top: 100px;
+        left: 0;
+        right: 0;
+        height: calc(100vh - 100px);
+        background: rgba(255, 255, 255, 0.98) !important;
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    .navbar-nav {
+        width: 100%;
+        text-align: center;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nav-link {
+        font-size: 2rem !important;
+        color: #000 !important;
+        padding: 1.5rem !important;
+        justify-content: center;
+    }
+
+    .nav-item {
+        margin: .25rem 0;
+    }
+}
+
+.nav-item:hover {
+    background-color: var(--bgCustom);
+    color: var(--textWhite) !important;
+}
+
+/* Desktop styles */
+
+.hoverBlk:hover {
+    color: var(--textBlack) !important;
+}
+
+@media (min-width: 992px) {
+    #navbarNav {
+        opacity: 1 !important;
+        transform: none !important;
+        visibility: visible !important;
+        display: flex !important;
+        position: static;
+        background: transparent;
+    }
+
+    .collapsing {
+        display: flex !important;
+        transition: none !important;
+    }
+}
+
+/* Services */
+
+#services {
+    z-index: 1;
+}
+
+.card {
+    width: 300px;
+    height: 275px;
+}
+
+/* In your CSS file or <style> tag */
+/* video.bg-video {
+    position: absolute; /* or absolute if needed */
+    /* top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none; 
+  } */
+
+/* About */
+
+#about {
+    margin: auto !important;
+    z-index: 1;
+    text-shadow: 2px 2px 5px var(--clrMain900);
+}
+
+@media (max-width: 992px) {
+    #about,
+    section {
+        height: auto !important;
+    }
+}
+
+  /* Search */
+
+  #search {
+    width: 100vw !important;
+    border: 1px solid var(--bgCustom);
+    width: 100dvw; 
+    height: auto;
+  }
+
+  .custom-ratio-container {
+    border: 1px solid var(--bgCustom);
+    position: relative;
+    min-width: 350px;
+    height: 800px;
+    overflow: hidden;
+    margin: auto;
+    aspect-ratio: 4 / 3; /* Mobile default */
+  }
+  
+  .custom-ratio-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
+  }
+  
+  /* Use media query to change to 16:9 on larger screens */
+  @media (min-width: 768px) {
+    .custom-ratio-container {
+      aspect-ratio: 16 / 9;
+      margin: auto;
+    }
+  }
+  
+  
+
+
+/* Contact */
+
+#contact {
+    background-color: var(--textBlack);
+    background-image: url(images/contactBG.png);
+    bottom: 0;
+    background-size: cover;
+    place-content: center;
+    text-shadow: 2px 2px 5px var(--textWhite);
+    margin-bottom: -3rem !important;
+}
+
+.containerInfo {
+    background: rgba(255, 255, 255, 0.1); /* light overlay */
+    border-radius: 16px;
+    backdrop-filter: blur(7px); /* frosted glass effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: .25rem;
+    color: var(--textWhite);
+    max-width: fit-content;
+}
+
+@media (min-width: 768px) {
+    #contact {
+        background-image: url(images/mobileContactBG.png);
+    }
+
+    .contactH2 {
+        font-size: 3rem !important;
+    }
+}
+
+/* Footer */
+
+
+footer {
+    width: 100vw !important;
+    height: auto;
+    padding-top: 3rem;
+    background-color: var(--textBlack) !important;
+}
